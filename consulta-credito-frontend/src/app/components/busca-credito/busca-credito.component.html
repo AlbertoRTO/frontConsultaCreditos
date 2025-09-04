@@ -1,0 +1,27 @@
+<div>
+  <div>
+    <label>
+      <input type="radio" [(ngModel)]="tipoBusca" value="nfse" name="tipoBusca">
+      NFS-e
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="tipoBusca" value="credito" name="tipoBusca">
+      Crédito
+    </label>
+  </div>
+
+  <div>
+    <input 
+      type="text" 
+      [(ngModel)]="valorBusca" 
+      [placeholder]="tipoBusca === 'nfse' ? 'Número da NFS-e' : 'Número do Crédito'">
+    <button (click)="buscar()" [disabled]="!valorBusca.trim()">
+      Buscar
+    </button>
+  </div>
+
+  <div *ngIf="erro">{{ erro }}</div>
+  <div *ngIf="carregando">Carregando...</div>
+  
+  <app-resultados-credito [creditos]="creditos"></app-resultados-credito>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="creditos.length > 0">
+  <h3>Resultados ({{ creditos.length }})</h3>
+  <table border="1">
+    <tr>
+      <th>Nº Crédito</th>
+      <th>Nº NFS-e</th>
+      <th>Data</th>
+      <th>Valor ISSQN</th>
+      <th>Tipo</th>
+      <th>Simples Nacional</th>
+      <th>Alíquota</th>
+      <th>Valor Faturado</th>
+      <th>Valor Dedução</th>
+      <th>Base Cálculo</th>
+    </tr>
+    <tr *ngFor="let credito of creditos">
+      <td>{{ credito.numeroCredito }}</td>
+      <td>{{ credito.numeroNfse }}</td>
+      <td>{{ formatarData(credito.dataConstituicao) }}</td>
+      <td>{{ formatarMoeda(credito.valorIssqn) }}</td>
+      <td>{{ credito.tipoCredito }}</td>
+      <td>{{ credito.simplesNacional }}</td>
+      <td>{{ formatarPercentual(credito.aliquota) }}</td>
+      <td>{{ formatarMoeda(credito.valorFaturado) }}</td>
+      <td>{{ formatarMoeda(credito.valorDeducao) }}</td>
+      <td>{{ formatarMoeda(credito.baseCalculo) }}</td>
+    </tr>
+  </table>
+</div>
