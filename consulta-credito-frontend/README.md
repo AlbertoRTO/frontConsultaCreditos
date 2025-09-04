@@ -1,5 +1,9 @@
 # Como Testar a Aplicação
 
+ Você pode testar todas as funcionalidades diretamente no navegador. 
+O interceptor mock simula perfeitamente as chamadas da API backend,
+  permitindo testar toda a interface sem depender do backend estar rodando.
+
 ## 🚀 Status da Aplicação
 ✅ **Servidor rodando em**: http://localhost:4200  
 ✅ **API simulada**: Dados de teste configurados  
